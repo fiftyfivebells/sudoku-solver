@@ -15,7 +15,6 @@ public class SudokuSquare extends JTextField {
 
         this.x = x;
         this.y = y;
-        this.digit = x;
 
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
         setPreferredSize(new Dimension(50, 50));
