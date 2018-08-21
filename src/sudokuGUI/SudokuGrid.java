@@ -7,12 +7,16 @@ public class SudokuGrid extends JPanel {
 
     private int width;
     private int height;
+    private SudokuSquare[][] squares;
 
     public SudokuGrid(int width, int height) {
         super(new GridBagLayout());
 
         this.width = width;
         this.height = height;
+
+        // make grid that holds all squares, not just 3x3
+        this.squares = new SudokuSquare[width*height][width*height];
 
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -29,6 +33,8 @@ public class SudokuGrid extends JPanel {
 
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
+
+    public SudokuSquare[][] getSquares() { return squares; }
 
     private JPanel smallGrid(int row, int col) {
         JPanel grid = new JPanel();
@@ -47,8 +53,10 @@ public class SudokuGrid extends JPanel {
                 // those for the sudoku square (x,y) values
                 int gridX = x + (row * width);
                 int gridY = y + (col * height);
+                SudokuSquare square = new SudokuSquare(gridX, gridY);
 
-                grid.add(new SudokuSquare(gridX, gridY), gbc);
+                grid.add(square, gbc);
+                this.squares[gridY][gridX] = square;
             }
         }
 
