@@ -40,6 +40,7 @@ public class SudokuFrame {
         fileMenu.add(generate);
         menuBar.add(fileMenu);
 
+        // open a file and fill the board with it
         open.addActionListener((ActionEvent e) -> {
             JFileChooser chooser = new JFileChooser();
             int status = chooser.showOpenDialog(frame);
@@ -71,9 +72,11 @@ public class SudokuFrame {
                 try {
                     for (String num : numsInRow) {
                         int digit = Integer.parseInt(num);
-
+                        System.out.println(digit);
                         if (digit > 0 && digit < 10) {
                             grid.getSquares()[x][y++].setText("  " + digit);
+                        } else if (digit == 0) {
+                            grid.getSquares()[x][y++].setText("   ");
                         }
                     }
                 } catch(NumberFormatException e) {
