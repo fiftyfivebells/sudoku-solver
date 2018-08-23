@@ -2,6 +2,8 @@ package sudokuGUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 
 public class SudokuGrid extends JPanel {
 
@@ -54,8 +56,13 @@ public class SudokuGrid extends JPanel {
                 int gridX = x + (row * width);
                 int gridY = y + (col * height);
                 SudokuSquare square = new SudokuSquare(gridX, gridY);
+                square.addActionListener((ActionEvent e) -> {
+                    square.setBackground(Color.YELLOW);
+                });
 
                 grid.add(square, gbc);
+                square.addMouseListener(new SudokuSquareMouseListener(square));
+                square.addKeyListener(new SudokuSquareKeyListener(square));
                 this.squares[gridY][gridX] = square;
             }
         }
