@@ -3,7 +3,10 @@ package sudokuGUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class SudokuFrame {
     private JFrame frame = new JFrame("Sudoku Solver");
@@ -37,8 +40,54 @@ public class SudokuFrame {
         fileMenu.add(generate);
         menuBar.add(fileMenu);
 
+        open.addActionListener((ActionEvent e) -> {
+            JFileChooser chooser = new JFileChooser();
+            int status = chooser.showOpenDialog(frame);
+
+            if (status == JFileChooser.APPROVE_OPTION) {
+                File file = chooser.getSelectedFile();
+                openFile(file);
+            }
+        });
+
 
         frame.setJMenuBar(menuBar);
+    }
+
+    public void openFile(File file) {
+        try {
+            Scanner scan = new Scanner(file);
+            clearBoard();
+
+            int lines = 9; // total number of squares in sudoku board
+            int x = 0;
+            int y = 0;
+
+            while (lines > 0) {
+                String row = scan.nextLine();
+                String[] numsInRow = row.split(",");
+
+
+                try {
+                    for (String num : numsInRow) {
+                        int digit = Integer.parseInt(num);
+
+                        if (digit > 0 && digit < 10) {
+                            grid.getSquares()[x][y++].setText("  " + digit);
+                        }
+                    }
+                } catch(NumberFormatException e) {
+                    System.out.println(e.getStackTrace());
+                }
+                x++;
+                y = 0;
+                lines--;
+            }
+
+
+        } catch(FileNotFoundException e) {
+            System.out.println(e.getStackTrace());
+        }
     }
 
     private void makeButtons() {
