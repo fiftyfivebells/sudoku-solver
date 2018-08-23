@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd7c15a7-40f4-4d42-a884-e9895836a189" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/solver/SudokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver/SudokuBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/solver/SudokuSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver/SudokuSolver.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,25 +38,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="java" value="10049" />
-          <entry key="txt" value="338" />
+          <entry key="java" value="10146" />
+          <entry key="txt" value="386" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10049" />
-          <entry key="PLAIN_TEXT" value="349" />
+          <entry key="JAVA" value="10146" />
+          <entry key="PLAIN_TEXT" value="397" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+            <state relative-caret-position="240">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/solver/SudokuSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+            <state relative-caret-position="500">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,7 +154,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/sudokuGUI/SudokuPanel.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/sudokuGUI/SudokuSquareMouseListener.java" />
         <option value="$PROJECT_DIR$/src/sudokuGUI/SudokuSquareKeyListener.java" />
         <option value="$PROJECT_DIR$/src/sudokuGUI/SudokuFrame.java" />
@@ -165,14 +164,14 @@
         <option value="$PROJECT_DIR$/src/sudokuGUI/SudokuGrid.java" />
         <option value="$PROJECT_DIR$/src/solver/SudokuBoard.java" />
         <option value="$PROJECT_DIR$/src/solver/SudokuSolver.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="55" />
-    <option name="width" value="1376" />
-    <option name="height" value="1015" />
+    <option name="y" value="31" />
+    <option name="width" value="960" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -208,7 +207,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535066981083" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535067292006" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/SudokuSolver" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -294,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534991856512</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Make a SudokuBoard class to represent the board">
+      <created>1535067012974</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1535067012974</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -366,7 +372,8 @@
     <MESSAGE value="Store squares in an array for easy access" />
     <MESSAGE value="Add event listener and method for clear button" />
     <MESSAGE value="Create a focus listener class for the squares" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create a focus listener class for the squares" />
+    <MESSAGE value="Make a SudokuBoard class to represent the board" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make a SudokuBoard class to represent the board" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sudokuGUI/SudokuPanel.java" />
@@ -379,16 +386,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudokuGUI/listeners/SudokuSquareListener.java" />
     <entry file="file://$PROJECT_DIR$/src/sudokuGUI/listeners/SudokuSquareMouseListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sudokuGUI/SudokuSquare.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -460,8 +457,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/solver/SudokuSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+        <state relative-caret-position="500">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

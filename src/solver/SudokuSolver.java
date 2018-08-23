@@ -5,13 +5,14 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class SudokuSolver {
-    private int[][] board;
+    private SudokuBoard board;
 
-    public SudokuSolver(int x, int y) {
-        this.board = new int[x][y];
+    public SudokuSolver(int rows, int cols) {
+
+        this.board = new SudokuBoard(rows, cols);
     }
 
-    public int getDigitFromBoard(int x, int y) { return board[x][y]; }
+    public int getDigitFromBoard(int row, int col) { return board.getDigitAtSquare(row, col); }
 
     public boolean solve() {
         int[] coords = nextEmptyCell();
@@ -25,11 +26,11 @@ public class SudokuSolver {
 
         for (int test = 1; test < 10; test++) {
             if (validLocation(row, col, test)) {
-                board[row][col] = test;
+                board.setDigitAtSquare(row, col, test);
 
                 if (solve()) { return true; }
 
-                board[row][col] = 0;
+                board.setSquareToDefault(row, col);
             }
         }
 
@@ -37,10 +38,10 @@ public class SudokuSolver {
     }
 
     private int[] nextEmptyCell() {
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (board[i][j] == 0) {
-                    return new int[] { i, j };
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                if (board.getDigitAtSquare(row, col) == 0) {
+                    return new int[] { row, col };
                 }
             }
         }
@@ -53,15 +54,15 @@ public class SudokuSolver {
     }
 
     private boolean notInRow(int row, int testVal) {
-        for (int i = 0; i < 9; i++) {
-            if (board[row][i] == testVal) { return false; }
+        for (int col = 0; col < 9; col++) {
+            if (board.getDigitAtSquare(row, col) == testVal) { return false; }
         }
         return true;
     }
 
     private boolean notInCol(int col, int testVal) {
-        for (int i = 0; i < 9; i++) {
-            if (board[i][col] == testVal) { return false; }
+        for (int row = 0; row < 9; row++) {
+            if (board.getDigitAtSquare(row, col) == testVal) { return false; }
         }
         return true;
     }
@@ -70,9 +71,9 @@ public class SudokuSolver {
         int beginningRow = (row / 3) * 3;
         int beginningCol = (col / 3) * 3;
 
-        for (int i = beginningRow; i < beginningRow + 3; i++) {
-            for (int j = beginningCol; j < beginningCol + 3; j++) {
-                if (board[i][j] == testVal) { return false; }
+        for (int x = beginningRow; x < beginningRow + 3; x++) {
+            for (int y = beginningCol; y < beginningCol + 3; y++) {
+                if (board.getDigitAtSquare(x, y) == testVal) { return false; }
             }
         }
         return true;
@@ -82,26 +83,26 @@ public class SudokuSolver {
         Set<Integer> checker = new HashSet<Integer>();
 
         // check rows
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (checker.contains(board[i][j])) { return false; }
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                if (checker.contains(board.getDigitAtSquare(row, col))) { return false; }
             }
             checker.clear();
         }
 
         // check columns
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (checker.contains(board[j][i])) { return false; }
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                if (checker.contains(board.getDigitAtSquare(col, row))) { return false; }
             }
             checker.clear();
         }
 
         // check boxes
         // check rows
-        for (int i = 0; i < 9; i += 3) {
-            for (int j = 0; j < 9; j += 3) {
-                if (!checkSquare(i, j)) { return false; }
+        for (int row = 0; row < 9; row += 3) {
+            for (int col = 0; col < 9; col += 3) {
+                if (!checkSquare(row, col)) { return false; }
             }
         }
         checker.clear();
@@ -115,9 +116,9 @@ public class SudokuSolver {
 
         Set<Integer> checker = new HashSet<Integer>();
 
-        for (int i = beginningRow; i < beginningRow + 3; i++) {
-            for (int j = beginningCol; j < beginningCol + 3; j++) {
-                int val = board[i][j];
+        for (int x = beginningRow; x < beginningRow + 3; x++) {
+            for (int y = beginningCol; y < beginningCol + 3;y++) {
+                int val = board.getDigitAtSquare(x, y);
 
                 if (checker.contains(val)) { return false; }
 
@@ -129,50 +130,47 @@ public class SudokuSolver {
         return true;
     }
 
-    public int[][] makeBoard() {
-        int i = 0;
-        int j = 0;
+    public void makeBoard() {
+        int row = 0;
+        int col = 0;
         int val;
-        int[][] board = new int[9][9];
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Numbers should be entered row by row, left to right, starting at the top left row.");
         System.out.println("If the space is blank, enter a 0.");
         System.out.println("Starting at row 1.");
-        while(j < 9 && i < 9) {
+        while(col < 9 && row < 9) {
             val = -1;
 
             while (val < 0 || val > 9) {
-                System.out.printf("Please enter the number in spot %d of row %d.\n", j+1, i+1);
+                System.out.printf("Please enter the number in spot %d of row %d.\n", col+1, row+1);
                 val = scan.nextInt();
             }
-            board[i][j] = val;
-            j++;
+            board.setDigitAtSquare(row, col, val);
+            col++;
 
-            if (j == 9) {
-                i++;
-                j = 0;
-                System.out.printf("Onto row %d.\n", i+1);
+            if (col == 9) {
+                row++;
+                col = 0;
+                System.out.printf("Onto row %d.\n", row+1);
             }
         }
-
-        return board;
     }
 
     public void printBoard() {
-        for (int i = 0; i < 9; i++) {
-            if (i % 3 == 0) {
+        for (int row = 0; row < 9; row++) {
+            if (row % 3 == 0) {
                 System.out.println("  ---------------------  ");
             }
 
-            for (int j = 0; j < 9; j++) {
-                if (j % 3 == 0) {
+            for (int col = 0; col < 9; col++) {
+                if (col % 3 == 0) {
                     System.out.print("| ");
                 }
-                if (board[i][j] == 0) {
+                if (board.getDigitAtSquare(row, col) == 0) {
                     System.out.print(". ");
                 } else {
-                    System.out.print(board[i][j] + " ");
+                    System.out.print(board.getDigitAtSquare(row, col) + " ");
                 }
             }
             System.out.println("|");
