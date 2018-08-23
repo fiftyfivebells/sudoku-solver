@@ -1,9 +1,11 @@
 package sudokuGUI;
 
+import sudokuGUI.listeners.SudokuSquareFocusListener;
+import sudokuGUI.listeners.SudokuSquareKeyListener;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
 
 public class SudokuGrid extends JPanel {
 
@@ -61,8 +63,10 @@ public class SudokuGrid extends JPanel {
                 });
 
                 grid.add(square, gbc);
-                square.addMouseListener(new SudokuSquareMouseListener(square));
+
+                // add listeners to the square
                 square.addKeyListener(new SudokuSquareKeyListener(square));
+                square.addFocusListener(new SudokuSquareFocusListener(square));
                 this.squares[gridY][gridX] = square;
             }
         }
