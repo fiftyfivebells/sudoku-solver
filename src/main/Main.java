@@ -1,15 +1,11 @@
 package main;
 
 import main.solver.SudokuSolver;
+import main.sudokuGUI.SudokuFrame;
 
 public class Main {
     public static void main(String[] args) {
 
-        SudokuSolver game = new SudokuSolver(9, 9);
-
-        game.makeBoard();
-        game.printBoard();
-        game.solve();
-        game.printBoard();
+        SudokuFrame game = new SudokuFrame();
     }
 }
