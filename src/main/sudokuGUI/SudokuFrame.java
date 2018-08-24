@@ -57,7 +57,7 @@ public class SudokuFrame {
     public void openFile(File file) {
         try {
             Scanner scan = new Scanner(file);
-            clearBoard();
+            // clearBoard();
 
             int lines = 9; // total number of squares in sudoku board
             int x = 0;
@@ -74,10 +74,8 @@ public class SudokuFrame {
 
                         grid.getSolver().getBoard().setDigitAtSquare(x, y, digit);
 
-                        if (digit > 0 && digit < 10) {
-                            grid.getSquares()[x][y++].setText("  " + digit);
-                        } else if (digit == 0) {
-                            grid.getSquares()[x][y++].setText("   ");
+                        if (digit >= 0 && digit < 10) {
+                            grid.getSquares()[x][y++].setDigit(digit);
                         }
                     }
                 } catch(NumberFormatException e) {
@@ -118,9 +116,10 @@ public class SudokuFrame {
     private void clearBoard() {
         for (SudokuSquare[] row : grid.getSquares()) {
             for (SudokuSquare square : row) {
-                square.setText("    ");
+                square.setDigit(0);
             }
         }
+        grid.getSolver().clearBoard();
     }
 
     private void solveBoard() {
@@ -130,7 +129,6 @@ public class SudokuFrame {
             for (int col = 0; col < 9; col++) {
                 int digit = grid.getSolver().getDigitFromBoard(row, col);
                 grid.getSquares()[row][col].setDigit(digit);
-                grid.getSquares()[row][col].setText("  " + digit);
             }
         }
     }
