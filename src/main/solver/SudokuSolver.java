@@ -12,6 +12,8 @@ public class SudokuSolver {
         this.board = new SudokuBoard(rows, cols);
     }
 
+    public SudokuBoard getBoard() { return board; }
+
     public int getDigitFromBoard(int row, int col) { return board.getDigitAtSquare(row, col); }
 
     public boolean solve() {

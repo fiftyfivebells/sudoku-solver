@@ -71,7 +71,9 @@ public class SudokuFrame {
                 try {
                     for (String num : numsInRow) {
                         int digit = Integer.parseInt(num);
-                        System.out.println(digit);
+
+                        grid.getSolver().getBoard().setDigitAtSquare(x, y, digit);
+
                         if (digit > 0 && digit < 10) {
                             grid.getSquares()[x][y++].setText("  " + digit);
                         } else if (digit == 0) {
@@ -107,12 +109,28 @@ public class SudokuFrame {
         clearButton.addActionListener((ActionEvent e) -> {
             clearBoard();
         });
+
+        solveButton.addActionListener((ActionEvent e) -> {
+            solveBoard();
+        });
     }
 
     private void clearBoard() {
         for (SudokuSquare[] row : grid.getSquares()) {
             for (SudokuSquare square : row) {
                 square.setText("    ");
+            }
+        }
+    }
+
+    private void solveBoard() {
+        grid.getSolver().solve();
+
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                int digit = grid.getSolver().getDigitFromBoard(row, col);
+                grid.getSquares()[row][col].setDigit(digit);
+                grid.getSquares()[row][col].setText("  " + digit);
             }
         }
     }

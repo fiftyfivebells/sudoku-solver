@@ -1,6 +1,7 @@
 package main.sudokuGUI;
 
 import main.solver.SudokuBoard;
+import main.solver.SudokuSolver;
 import main.sudokuGUI.listeners.SudokuSquareFocusListener;
 import main.sudokuGUI.listeners.SudokuSquareKeyListener;
 
@@ -13,14 +14,14 @@ public class SudokuGrid extends JPanel {
     private int width;
     private int height;
     private SudokuSquare[][] squares;
-    private SudokuBoard board;
+    private SudokuSolver solver;
 
     public SudokuGrid(int width, int height) {
         super(new GridBagLayout());
 
         this.width = width;
         this.height = height;
-        this.board = new SudokuBoard(width*width, height*height);
+        this.solver = new SudokuSolver(9, 9);
 
         // make grid that holds all squares, not just 3x3
         this.squares = new SudokuSquare[width*height][width*height];
@@ -41,8 +42,8 @@ public class SudokuGrid extends JPanel {
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
 
-    public SudokuBoard getBoard() {
-        return board;
+    public SudokuSolver getSolver() {
+        return solver;
     }
 
     public SudokuSquare[][] getSquares() { return squares; }
