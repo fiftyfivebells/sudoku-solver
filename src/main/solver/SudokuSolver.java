@@ -14,6 +14,10 @@ public class SudokuSolver {
 
     public SudokuBoard getBoard() { return board; }
 
+    public void clearBoard() {
+        board.clearBoard();
+    }
+
     public int getDigitFromBoard(int row, int col) { return board.getDigitAtSquare(row, col); }
 
     public boolean solve() {
