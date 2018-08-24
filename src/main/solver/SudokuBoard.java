@@ -1,4 +1,4 @@
-package solver;
+package main.solver;
 
 public class SudokuBoard {
     private int[][] grid;

@@ -1,13 +1,9 @@
-package sudokuGUI;
+package main.sudokuGUI;
 
-import solver.SudokuSolver;
+import main.solver.SudokuSolver;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class SudokuSquare extends JTextField {
     private int digit;      // number in sudoku board

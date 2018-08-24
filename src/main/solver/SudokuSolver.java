@@ -1,4 +1,4 @@
-package solver;
+package main.solver;
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -153,6 +153,17 @@ public class SudokuSolver {
                 row++;
                 col = 0;
                 System.out.printf("Onto row %d.\n", row+1);
+            }
+        }
+    }
+
+    public void fillBoard(int[][] board) {
+        int rows = board.length;
+        int cols = board[0].length;
+
+        for (int x = 0; x < rows; x++) {
+            for (int y = 0; y < cols; y++) {
+                this.board.setDigitAtSquare(x, y, board[x][y]);
             }
         }
     }

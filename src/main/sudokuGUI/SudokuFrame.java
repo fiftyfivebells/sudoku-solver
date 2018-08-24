@@ -1,11 +1,10 @@
-package sudokuGUI;
+package main.sudokuGUI;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class SudokuFrame {

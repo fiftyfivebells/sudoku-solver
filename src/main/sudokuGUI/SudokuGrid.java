@@ -1,7 +1,7 @@
-package sudokuGUI;
+package main.sudokuGUI;
 
-import sudokuGUI.listeners.SudokuSquareFocusListener;
-import sudokuGUI.listeners.SudokuSquareKeyListener;
+import main.sudokuGUI.listeners.SudokuSquareFocusListener;
+import main.sudokuGUI.listeners.SudokuSquareKeyListener;
 
 import javax.swing.*;
 import java.awt.*;

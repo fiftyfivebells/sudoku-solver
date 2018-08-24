@@ -1,6 +1,6 @@
-package sudokuGUI.listeners;
+package main.sudokuGUI.listeners;
 
-import sudokuGUI.SudokuSquare;
+import main.sudokuGUI.SudokuSquare;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
