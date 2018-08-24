@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd7c15a7-40f4-4d42-a884-e9895836a189" name="Default Changelist" comment="Refactor solver to use external board class">
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/SudokuBoardTest.java" afterDir="false" />
+    <list default="true" id="dd7c15a7-40f4-4d42-a884-e9895836a189" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sudoku/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sudoku/solver/SudokuSolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sudoku/sudokuGUI/SudokuFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sudoku/sudokuGUI/SudokuGrid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sudoku/sudokuGUI/SudokuSquare.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/solver/SudokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/solver/SudokuBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/solver/SudokuSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/solver/SudokuSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudokuGUI/SudokuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sudokuGUI/SudokuFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudokuGUI/SudokuGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sudokuGUI/SudokuGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudokuGUI/SudokuSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sudokuGUI/SudokuSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudokuGUI/listeners/SudokuSquareFocusListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sudokuGUI/listeners/SudokuSquareFocusListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sudokuGUI/listeners/SudokuSquareKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sudokuGUI/listeners/SudokuSquareKeyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudoku.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sudoku.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +20,7 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="240" />
+    <option name="myElementSize" value="293" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1987269356">
@@ -65,13 +48,13 @@
         <counts>
           <entry key="dummy" value="11" />
           <entry key="java" value="12028" />
-          <entry key="txt" value="434" />
+          <entry key="txt" value="585" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="12028" />
-          <entry key="PLAIN_TEXT" value="445" />
+          <entry key="PLAIN_TEXT" value="596" />
         </counts>
       </usages-collector>
     </session>
@@ -102,7 +85,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/SudokuBoardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
+            <state relative-caret-position="392">
               <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -277,7 +260,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535074548120" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535074904093" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/SudokuSolver" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -427,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1535067345196</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add tests for sudoku board and solver classes">
+      <created>1535074733722</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1535074733722</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Move non-test classes into new main package">
+      <created>1535074801289</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1535074801289</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -437,10 +434,15 @@
     <history-entry file="SudokuSolverTest - 2018.08.23 at 21h 01m 53s.xml">
       <configuration name="SudokuSolverTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SudokuSolverTest - 2018.08.23 at 21h 35m 19s.xml">
+      <configuration name="SudokuSolverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SudokuBoardTest - 2018.08.23 at 21h 35m 33s.xml">
+      <configuration name="SudokuBoardTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1049" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1826923" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -451,7 +453,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31653887" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31653887" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -510,7 +512,9 @@
     <MESSAGE value="Create a focus listener class for the squares" />
     <MESSAGE value="Make a SudokuBoard class to represent the board" />
     <MESSAGE value="Refactor solver to use external board class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor solver to use external board class" />
+    <MESSAGE value="Add tests for sudoku board and solver classes" />
+    <MESSAGE value="Move non-test classes into new main package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move non-test classes into new main package" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sudokuGUI/SudokuPanel.java" />
@@ -635,7 +639,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/SudokuBoardTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
+        <state relative-caret-position="392">
           <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
