@@ -7,3 +7,5 @@ Presently, the algorithm for solving the puzzle is a straight-forward, brute-for
 ### Notes
 
 * Should SudokuSolver have it's own way to fill the board, or is letting the openFile method in the GUI good enough? Is that tying my model and view too closely together?
+
+* Go back and change add methods to interact with classes instead of accessing the instance variables directly. Case in point: the SudokuSquare class should have a method to set the text, rather than having other methods set the test directly on the variable itself.
