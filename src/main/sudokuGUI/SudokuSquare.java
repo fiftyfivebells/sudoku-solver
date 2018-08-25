@@ -43,8 +43,25 @@ public class SudokuSquare extends JTextField {
         addTextToField();
     }
 
-    private void getDigitFromBoard(SudokuSolver sudoku) {
-        this.digit = sudoku.getDigitFromBoard(x, y);
+    public boolean isCanEdit() {
+        return canEdit;
+    }
+
+    public void setCanEdit(boolean edit) {
+        canEdit = edit;
+    }
+
+    public boolean isValueHidden() {
+        return valueHidden;
+    }
+
+    public void setActualValue(int value) {
+        this.actualValue = value;
+        this.canEdit = false;
+    }
+
+    private void getValueFromBoard(SudokuSolver sudoku) {
+        this.actualValue = sudoku.getDigitFromBoard(row, col);
     }
 
     private void addTextToField() {
