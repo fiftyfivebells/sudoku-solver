@@ -1,8 +1,6 @@
 package main.solver;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class SudokuSolver {
     private SudokuBoard board;
@@ -41,6 +39,21 @@ public class SudokuSolver {
         }
 
         return false;
+    }
+
+    public void generatePuzzle() {
+       List<Integer> topRow = new ArrayList<>();
+
+        for (int i = 1; i < 10; i++) {
+            topRow.add(i);
+        }
+
+        for (int i = 0; i < 9; i++) {
+            Collections.shuffle(topRow);
+            board.setDigitAtSquare(0, i, topRow.remove(0));
+        }
+
+        solve();
     }
 
     private int[] nextEmptyCell() {
