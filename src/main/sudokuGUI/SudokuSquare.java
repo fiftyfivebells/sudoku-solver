@@ -18,8 +18,11 @@ public class SudokuSquare extends JTextField {
     public SudokuSquare(int row, int col) {
         super();
 
-        this.x = x;
-        this.y = y;
+        this.row = row;
+        this.col = col;
+
+        this.canEdit = true;
+        this.valueHidden = false;
 
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
         setPreferredSize(new Dimension(50, 50));
