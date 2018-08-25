@@ -31,7 +31,7 @@ public class SudokuSquare extends JTextField {
         Font font = new Font("sanserif", Font.BOLD, 24);
         this.setFont(font);
 
-        this.setEditable(false);
+        setEditable(false);
 
         addTextToField();
     }
