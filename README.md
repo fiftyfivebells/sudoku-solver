@@ -14,15 +14,15 @@ The puzzle has three buttons:
 
 The "open" option in the menu allows a user to load in a puzzle file. The file should be a CSV in the following form:
 
-1,1,1,1,1,1,1,1,1
-2,2,2,2,2,2,2,2,2
-3,3,3,3,3,3,3,3,3
-4,4,4,4,4,4,4,4,4
-5,5,5,5,5,5,5,5,5
-6,6,6,6,6,6,6,6,6
-7,7,7,7,7,7,7,7,7
-8,8,8,8,8,8,8,8,8
-9,9,9,9,9,9,9,9,9
+1,1,1,1,1,1,1,1,1  
+2,2,2,2,2,2,2,2,2  
+3,3,3,3,3,3,3,3,3  
+4,4,4,4,4,4,4,4,4  
+5,5,5,5,5,5,5,5,5  
+6,6,6,6,6,6,6,6,6  
+7,7,7,7,7,7,7,7,7  
+8,8,8,8,8,8,8,8,8  
+9,9,9,9,9,9,9,9,9  
 
 Blank spaces in the puzzle should be entered as zeros.
 
