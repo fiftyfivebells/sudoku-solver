@@ -65,6 +65,10 @@ public class SudokuSquare extends JTextField {
         this.canEdit = false;
     }
 
+    public int getActualValue() {
+        return this.actualValue;
+    }
+
     private void getValueFromBoard(SudokuSolver sudoku) {
         this.actualValue = sudoku.getDigitFromBoard(row, col);
     }
