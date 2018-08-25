@@ -72,4 +72,21 @@ public class SudokuSquare extends JTextField {
         }
         this.setText("  " + text);
     }
+
+    public void addTextToField(int digit) {
+
+            displayText(digit);
+
+            if (digit != actualValue && actualValue != 0) {
+                setBackground(Color.RED);
+            }
+    }
+
+    private void displayText(int digit) {
+        if (digit == 0) {
+            setText("   ");
+        } else {
+            setText("  " + digit);
+        }
+    }
 }
