@@ -2,6 +2,7 @@ package main.sudokuGUI.listeners;
 
 import main.sudokuGUI.SudokuSquare;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -33,6 +34,8 @@ public class SudokuSquareKeyListener implements KeyListener {
                 square.setBackground(Color.WHITE);
             }
         }
+
+
     }
 
     @Override
