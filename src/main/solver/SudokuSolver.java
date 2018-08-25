@@ -149,33 +149,6 @@ public class SudokuSolver {
         return true;
     }
 
-    public void makeBoard() {
-        int row = 0;
-        int col = 0;
-        int val;
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Numbers should be entered row by row, left to right, starting at the top left row.");
-        System.out.println("If the space is blank, enter a 0.");
-        System.out.println("Starting at row 1.");
-        while(col < 9 && row < 9) {
-            val = -1;
-
-            while (val < 0 || val > 9) {
-                System.out.printf("Please enter the number in spot %d of row %d.\n", col+1, row+1);
-                val = scan.nextInt();
-            }
-            board.setDigitAtSquare(row, col, val);
-            col++;
-
-            if (col == 9) {
-                row++;
-                col = 0;
-                System.out.printf("Onto row %d.\n", row+1);
-            }
-        }
-    }
-
     public void fillBoard(int[][] board) {
         int rows = board.length;
         int cols = board[0].length;
@@ -187,24 +160,5 @@ public class SudokuSolver {
         }
     }
 
-    public void printBoard() {
-        for (int row = 0; row < 9; row++) {
-            if (row % 3 == 0) {
-                System.out.println("  ---------------------  ");
-            }
 
-            for (int col = 0; col < 9; col++) {
-                if (col % 3 == 0) {
-                    System.out.print("| ");
-                }
-                if (board.getDigitAtSquare(row, col) == 0) {
-                    System.out.print(". ");
-                } else {
-                    System.out.print(board.getDigitAtSquare(row, col) + " ");
-                }
-            }
-            System.out.println("|");
-        }
-        System.out.println("  ---------------------  ");
-    }
 }
