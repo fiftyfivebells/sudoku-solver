@@ -74,6 +74,10 @@ public class SudokuFrame {
 
                         grid.getSolver().getBoard().setDigitAtSquare(x, y, digit);
 
+                        if (digit != 0) {
+                            grid.getSquares()[x][y].setCanEdit(false);
+                        }
+
                         if (digit >= 0 && digit < 10) {
                             grid.getSquares()[x][y++].setDigit(digit);
                         }
