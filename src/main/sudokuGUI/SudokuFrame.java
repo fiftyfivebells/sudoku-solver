@@ -32,11 +32,11 @@ public class SudokuFrame {
         JMenu fileMenu = new JMenu("File");
 
         JMenuItem open = new JMenuItem("Open");
-        JMenuItem generate = new JMenuItem("Generate Puzzle");
+        JMenuItem about = new JMenuItem("About");
 
         fileMenu.add(open);
         fileMenu.addSeparator();
-        fileMenu.add(generate);
+        fileMenu.add(about);
         menuBar.add(fileMenu);
 
         // open a file and fill the board with it
@@ -50,9 +50,14 @@ public class SudokuFrame {
             }
         });
 
-        // generate and display a new puzzle in the board
-        generate.addActionListener((ActionEvent e) -> {
-            generatePuzzle();
+        about.addActionListener((ActionEvent e) -> {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "By Stephen (fiftyfivebells) Bell " +
+                            "\n Code at http://www.github.com/fiftyfivebells/sudoku-solver",
+                    "About",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
         });
 
 
