@@ -40,6 +40,7 @@ public class SudokuSquare extends JTextField {
 
     public void setDigit(int digit) {
         this.digit = digit;
+        addTextToField();
     }
 
     private void getDigitFromBoard(SudokuSolver sudoku) {
