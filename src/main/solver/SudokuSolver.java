@@ -44,6 +44,8 @@ public class SudokuSolver {
     public void generatePuzzle() {
        List<Integer> topRow = new ArrayList<>();
 
+       clearBoard();
+
         for (int i = 1; i < 10; i++) {
             topRow.add(i);
         }
