@@ -36,12 +36,6 @@ public class SudokuSquare extends JTextField {
         addTextToField();
     }
 
-    public void setFocus(boolean val) {
-        this.focus = val;
-    }
-
-    public boolean getFocus() { return focus; }
-
     public int getDigit() { return digit; }
 
     public void setDigit(int digit) {
