@@ -138,6 +138,8 @@ public class SudokuFrame {
         for (SudokuSquare[] row : grid.getSquares()) {
             for (SudokuSquare square : row) {
                 square.setDigit(0);
+                square.setActualValue(0);
+                square.setCanEdit(true);
             }
         }
         grid.getSolver().clearBoard();
