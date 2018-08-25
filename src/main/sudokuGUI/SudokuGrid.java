@@ -84,6 +84,9 @@ public class SudokuGrid extends JPanel {
         return grid;
     }
 
+    // fills the GUI board from the solved back-end board, setting
+    // actual value of each square to its solved value
+
     public void fillGrid() {
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
