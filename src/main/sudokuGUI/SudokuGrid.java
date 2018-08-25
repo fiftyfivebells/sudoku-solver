@@ -96,4 +96,22 @@ public class SudokuGrid extends JPanel {
             }
         }
     }
+
+    // hides display of random squares but keeps solved value hidden
+    // so a user can try to solve the puzzle
+
+    public void hideSquares() {
+        int squaresToHide = 50;
+        int row;
+        int col;
+
+        while (squaresToHide-- > 0) {
+            row = (int) (Math.random() * 9);
+            col = (int) (Math.random() * 9);
+
+            squares[row][col].setDigit(0);
+            squares[row][col].setCanEdit(true);
+            squares[row][col].setValueHidden(true);
+        }
+    }
 }
