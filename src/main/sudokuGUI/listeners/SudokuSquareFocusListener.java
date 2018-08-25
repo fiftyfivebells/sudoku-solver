@@ -23,7 +23,7 @@ public class SudokuSquareFocusListener implements FocusListener {
 
     @Override
     public void focusLost(FocusEvent focusEvent) {
-        if (square.getDigit() == 0 || square.getActualValue() == square.getDigit()) {
+        if (square.getDigit() == 0 || square.getActualValue() == 0 || square.getActualValue() == square.getDigit()) {
             square.setBackground(Color.WHITE);
         }
     }
