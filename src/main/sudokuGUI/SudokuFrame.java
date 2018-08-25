@@ -61,7 +61,6 @@ public class SudokuFrame {
             );
         });
 
-
         frame.setJMenuBar(menuBar);
     }
 
