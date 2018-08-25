@@ -12,6 +12,7 @@ public class SudokuFrame {
     private JPanel buttonPanel;
     private JButton solveButton;
     private JButton clearButton;
+    private JButton generateButton;
     private SudokuGrid grid = new SudokuGrid(3, 3);
 
     public SudokuFrame() {
@@ -110,12 +111,15 @@ public class SudokuFrame {
         this.buttonPanel = new JPanel(new BorderLayout());
         this.solveButton = new JButton("Solve");
         this.clearButton = new JButton("Clear");
+        this.generateButton = new JButton("Generate");
 
         Font buttonFont = new Font("sanserif", Font.CENTER_BASELINE, 20);
         solveButton.setFont(buttonFont);
         clearButton.setFont(buttonFont);
+        generateButton.setFont(buttonFont);
 
         buttonPanel.add(solveButton, BorderLayout.WEST);
+        buttonPanel.add(generateButton, BorderLayout.CENTER);
         buttonPanel.add(clearButton, BorderLayout.EAST);
 
         clearButton.addActionListener((ActionEvent e) -> {
@@ -124,6 +128,10 @@ public class SudokuFrame {
 
         solveButton.addActionListener((ActionEvent e) -> {
             solveBoard();
+        });
+
+        generateButton.addActionListener((ActionEvent e) -> {
+            generatePuzzle();
         });
     }
 
