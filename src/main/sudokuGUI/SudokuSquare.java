@@ -12,7 +12,10 @@ public class SudokuSquare extends JTextField {
     private int row;                // x position in sudoku board
     private int col;                // y position in sudoku board
 
-    public SudokuSquare(int x, int y) {
+    private boolean canEdit;
+    private boolean valueHidden;    // is the square one the user needs to guess?
+
+    public SudokuSquare(int row, int col) {
         super();
 
         this.x = x;
