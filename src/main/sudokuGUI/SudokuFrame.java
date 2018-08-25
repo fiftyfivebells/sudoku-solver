@@ -50,8 +50,18 @@ public class SudokuFrame {
             }
         });
 
+        // generate and display a new puzzle in the board
+        generate.addActionListener((ActionEvent e) -> {
+            generatePuzzle();
+        });
+
 
         frame.setJMenuBar(menuBar);
+    }
+
+    public void generatePuzzle() {
+        grid.getSolver().generatePuzzle();
+        grid.fillGrid();
     }
 
     public void openFile(File file) {

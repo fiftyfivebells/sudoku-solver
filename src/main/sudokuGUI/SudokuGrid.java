@@ -83,4 +83,14 @@ public class SudokuGrid extends JPanel {
         grid.setPreferredSize(new Dimension(150, 150));
         return grid;
     }
+
+    public void fillGrid() {
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                int value = solver.getDigitFromBoard(row, col);
+                squares[row][col].setActualValue(value);
+                squares[row][col].setDigit(value);
+            }
+        }
+    }
 }
