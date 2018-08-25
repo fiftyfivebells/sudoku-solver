@@ -6,9 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SudokuSquare extends JTextField {
-    private int digit;      // number in sudoku board
-    private int x;          // x position in sudoku board
-    private int y;          // y position in sudoku board
+    private int digit;              // number shown in sudoku board
+    private int actualValue;        // square's value in solved board
 
     private boolean focus;  // is the square the focus?
 
