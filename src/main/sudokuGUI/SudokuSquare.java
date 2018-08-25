@@ -56,6 +56,10 @@ public class SudokuSquare extends JTextField {
         return valueHidden;
     }
 
+    public void setValueHidden(boolean hidden) {
+        this.valueHidden = true;
+    }
+
     public void setActualValue(int value) {
         this.actualValue = value;
         this.canEdit = false;
