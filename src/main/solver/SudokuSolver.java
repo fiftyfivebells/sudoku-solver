@@ -160,5 +160,14 @@ public class SudokuSolver {
         }
     }
 
+    public void emptyBoard() {
+        int rows = board.getGrid().length;
+        int cols = board.getGrid()[0].length;
 
+        for (int x = 0; x < rows; x++) {
+            for (int y = 0; y < cols; y++) {
+                this.board.setDigitAtSquare(x, y, 0);
+            }
+        }
+    }
 }
