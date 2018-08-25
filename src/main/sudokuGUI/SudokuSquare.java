@@ -9,7 +9,8 @@ public class SudokuSquare extends JTextField {
     private int digit;              // number shown in sudoku board
     private int actualValue;        // square's value in solved board
 
-    private boolean focus;  // is the square the focus?
+    private int row;                // x position in sudoku board
+    private int col;                // y position in sudoku board
 
     public SudokuSquare(int x, int y) {
         super();
