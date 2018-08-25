@@ -16,7 +16,9 @@ public class SudokuSquareFocusListener implements FocusListener {
 
     @Override
     public void focusGained(FocusEvent focusEvent) {
-        square.setBackground(Color.YELLOW);
+        if (square.isCanEdit()) {
+            square.setBackground(Color.YELLOW);
+        }
     }
 
     @Override
