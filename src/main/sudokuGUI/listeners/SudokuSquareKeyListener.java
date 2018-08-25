@@ -18,6 +18,7 @@ public class SudokuSquareKeyListener implements KeyListener {
         char c = keyEvent.getKeyChar();
 
         switch(c) {
+            case '0':
             case '1':
             case '2':
             case '3':
@@ -27,7 +28,9 @@ public class SudokuSquareKeyListener implements KeyListener {
             case '7':
             case '8':
             case '9':
-                square.setText("  " + Character.toString(c));
+                if (square.isCanEdit()) {
+                    square.addTextToField(c - 48);
+                }
         }
     }
 
