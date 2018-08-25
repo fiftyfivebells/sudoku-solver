@@ -65,12 +65,12 @@ public class SudokuSquare extends JTextField {
     }
 
     private void addTextToField() {
-        String text = Integer.toString(digit);
 
-        if (text.equals("0")) {
-            text = " ";
+        if (digit == actualValue) {
+           displayText(actualValue);
+        } else {
+            displayText(digit);
         }
-        this.setText("  " + text);
     }
 
     public void addTextToField(int digit) {
