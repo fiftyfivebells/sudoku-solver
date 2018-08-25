@@ -15,22 +15,23 @@ public class SudokuSquareKeyListener implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent keyEvent) {
-        char c = keyEvent.getKeyChar();
+        int digit = keyEvent.getKeyChar() - 48;
 
-        switch(c) {
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-                if (square.isCanEdit()) {
-                    square.addTextToField(c - 48);
-                }
+        if (digit >= 0 && digit < 10) {
+            if (square.isCanEdit()) {
+                square.addTextToField(digit);
+                square.setDigit(digit);
+            }
+
+            if (square.getDigit() == 0) {
+                square.setBackground(Color.YELLOW);
+            }
+
+            if (square.getDigit() == square.getActualValue()) {
+                square.setCanEdit(false);
+                square.setValueHidden(false);
+                square.setBackground(Color.WHITE);
+            }
         }
     }
 
