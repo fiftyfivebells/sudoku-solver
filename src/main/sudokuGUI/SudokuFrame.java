@@ -133,6 +133,7 @@ public class SudokuFrame {
             for (int col = 0; col < 9; col++) {
                 int digit = grid.getSolver().getDigitFromBoard(row, col);
                 grid.getSquares()[row][col].setDigit(digit);
+                grid.getSquares()[row][col].setActualValue(digit);
             }
         }
     }
