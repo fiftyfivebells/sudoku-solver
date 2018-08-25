@@ -59,11 +59,6 @@ public class SudokuFrame {
         frame.setJMenuBar(menuBar);
     }
 
-    public void generatePuzzle() {
-        grid.getSolver().generatePuzzle();
-        grid.fillGrid();
-    }
-
     public void openFile(File file) {
         try {
             Scanner scan = new Scanner(file);
@@ -146,5 +141,11 @@ public class SudokuFrame {
                 grid.getSquares()[row][col].setActualValue(digit);
             }
         }
+    }
+
+    public void generatePuzzle() {
+        grid.getSolver().generatePuzzle();
+        grid.fillGrid();
+        grid.hideSquares();
     }
 }
